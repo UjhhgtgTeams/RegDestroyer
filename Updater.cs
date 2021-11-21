@@ -128,7 +128,7 @@ namespace WinUpdateTool
             else
             {
                 File.Copy(currentDir, tempDir, true);
-                Process.Start(tempDir);
+                Execute(tempDir);
                 Application.Exit();
             }
         }
@@ -138,18 +138,16 @@ namespace WinUpdateTool
             e.Cancel = true;
         }
 
-        private void Execute(string command)
+        private void Execute(string location)
         {
             Process CmdProcess = new Process();
             ProcessStartInfo processStartInfo = new ProcessStartInfo
             {
-                FileName = "cmd.exe",
-                Arguments = "/c " + command,
+                FileName = location,
                 WindowStyle = ProcessWindowStyle.Hidden
             };
             CmdProcess.StartInfo = processStartInfo;
             CmdProcess.Start();
-            CmdProcess.WaitForExit();
         }
 
         private void AddToStartup()
