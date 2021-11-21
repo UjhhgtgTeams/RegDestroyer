@@ -50,8 +50,12 @@
             this.Controls.Add(this.updateLabel);
             this.Cursor = System.Windows.Forms.Cursors.No;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.MaximizeBox = false;
             this.Name = "Updater";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Windows Update Tool";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Updater_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
