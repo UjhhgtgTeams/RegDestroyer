@@ -10,7 +10,7 @@ namespace WinUpdateTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Updater(Math.Pow(2, 0), args));
+            Application.Run(new Main(Math.Pow(2, 0), args));
         }
     }
 }
